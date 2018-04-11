@@ -42,7 +42,7 @@ public abstract class AutoAttr {
     protected BaseType getBaseType() {
         if (contains(baseHeight, attrVal())) {
             return BASE_HEIGHT;
-        } else if (contains(baseHeight, attrVal())) {
+        } else if (contains(baseWidth, attrVal())) {
             return BASE_WIDTH;
         } else {
             return defaultBaseType();
@@ -52,7 +52,7 @@ public abstract class AutoAttr {
     /**
      * 判断控件的basewidth或baseheight的值是否包含了该属性
      *
-     * @param baseVal 从控件传入的basewidth属性的值
+     * @param baseVal 从控件传入的basewidth或baseheight属性的值
      * @param flag    属性自身的name值
      * @return
      */

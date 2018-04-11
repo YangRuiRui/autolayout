@@ -1,7 +1,6 @@
 package com.yr.autolayout.utils;
 
 import android.view.View;
-
 import com.yr.autolayout.AutoLayoutInfo;
 import com.yr.autolayout.attr.Attrs;
 import com.yr.autolayout.attr.BaseType;
