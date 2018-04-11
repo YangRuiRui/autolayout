@@ -96,10 +96,3 @@ public abstract class AutoAttr {
      */
     protected abstract void execute(View view, int val);
 }
-
-/**
- * px换算的基础类型(分为屏幕宽和屏幕搞)
- */
-enum BaseType {
-    BASE_HEIGHT, BASE_WIDTH
-}

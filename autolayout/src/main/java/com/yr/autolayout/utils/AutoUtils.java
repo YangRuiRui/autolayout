@@ -3,6 +3,8 @@ package com.yr.autolayout.utils;
 import android.view.View;
 
 import com.yr.autolayout.AutoLayoutInfo;
+import com.yr.autolayout.attr.Attrs;
+import com.yr.autolayout.attr.BaseType;
 import com.yr.autolayout.config.AutoLayoutConifg;
 
 /**
@@ -24,6 +26,92 @@ public class AutoUtils {
         AutoLayoutInfo autoLayoutInfo = AutoLayoutInfo.getAttrFromView(view, attrs, baseWidth, baseHeight);
         if (autoLayoutInfo != null)
             autoLayoutInfo.fillAttrs(view);
+    }
+
+    /**
+     * 适配文字大小
+     * @param view
+     */
+    public static void autoTextSize(View view) {
+        auto(view, Attrs.TEXT_SIZE, 0, 0);
+    }
+
+    /**
+     * 根据屏幕宽或者高适配文字大小
+     * @param view
+     * @param baseType
+     */
+    public static void autoTextSize(View view, BaseType baseType) {
+        if (baseType == BaseType.BASE_HEIGHT) {
+            auto(view, Attrs.TEXT_SIZE, 0, Attrs.TEXT_SIZE);
+        } else {
+            auto(view, Attrs.TEXT_SIZE, Attrs.TEXT_SIZE, 0);
+        }
+    }
+
+    /**
+     * 适配边距
+     * @param view
+     */
+    public static void autoMargin(View view) {
+        auto(view, Attrs.MARGIN, 0, 0);
+    }
+
+    /**
+     * 根据屏幕宽或者高适配边距
+     * @param view
+     * @param baseType
+     */
+    public static void autoMargin(View view, BaseType baseType) {
+        if (baseType == BaseType.BASE_HEIGHT) {
+            auto(view, Attrs.MARGIN, 0, Attrs.MARGIN);
+        } else {
+            auto(view, Attrs.MARGIN, Attrs.MARGIN, 0);
+        }
+    }
+
+    /**
+     * 适配内边距
+     * @param view
+     */
+    public static void autoPadding(View view) {
+        auto(view, Attrs.PADDING, 0, 0);
+    }
+
+    /**
+     * 根据屏幕宽或者高适配内边距
+     * @param view
+     * @param baseType
+     */
+    public static void autoPadding(View view, BaseType baseType) {
+        if (baseType == BaseType.BASE_HEIGHT) {
+            auto(view, Attrs.PADDING, 0, Attrs.PADDING);
+        } else {
+            auto(view, Attrs.PADDING, Attrs.PADDING, 0);
+        }
+    }
+
+    /**
+     * 适配控件本身的宽高
+     *
+     * @param view
+     */
+    public static void autoSize(View view) {
+        auto(view, Attrs.WIDTH | Attrs.HEIGHT, 0, 0);
+    }
+
+    /**
+     * 基于屏幕宽或者高适配控件本身宽高
+     *
+     * @param view
+     * @param baseType
+     */
+    public static void autoSize(View view, BaseType baseType) {
+        if (baseType == BaseType.BASE_HEIGHT) {
+            auto(view, Attrs.WIDTH | Attrs.HEIGHT, 0, Attrs.WIDTH | Attrs.HEIGHT);
+        } else {
+            auto(view, Attrs.WIDTH | Attrs.HEIGHT, Attrs.WIDTH | Attrs.HEIGHT, 0);
+        }
     }
 
     /**
